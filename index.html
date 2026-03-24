@@ -610,7 +610,7 @@
         </div>
 
         <div class="footer">
-            <i class="fas fa-copyright"></i> 2026 IIBS - Institut International de Business et de Technologie | LAMB TECH 2ème Édition
+            <i class="fas fa-copyright"></i> 2026 IIBS - Institut Informatique Business School | LAMB TECH 2ème Édition
         </div>
     </div>
     <script type="module">
@@ -634,9 +634,7 @@
         } catch (error) {
             console.error("❌ Erreur Firebase:", error);
         }
-
         let memberCount = 3;
-
         function createMemberCard(index) {
             return `
                 <div class="member-card" data-member-index="${index}">
@@ -670,15 +668,13 @@
                 </div>
             `;
         }
-
         function renderMembers() {
             const container = document.getElementById('membersContainer');
             let html = '';
             for (let i = 1; i <= memberCount; i++) {
                 html += createMemberCard(i);
             }
-            container.innerHTML = html;
-            
+            container.innerHTML = html;  
             document.querySelectorAll('.btn-remove-member').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     if (memberCount > 3) {
@@ -688,7 +684,6 @@
                 });
             });
         }
-
         document.getElementById('addMemberBtn').addEventListener('click', () => {
             if (memberCount < 5) {
                 memberCount++;
@@ -697,7 +692,6 @@
                 showMessage("⚠️ L'équipe ne peut pas avoir plus de 5 membres", "error");
             }
         });
-
         function showMessage(message, type) {
             const container = document.getElementById('messageContainer');
             const icon = type === 'success' ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-exclamation-triangle"></i>';
